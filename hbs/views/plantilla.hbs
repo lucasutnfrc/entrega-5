@@ -1,0 +1,28 @@
+
+<p class="text-primary display-5">Vista de Productos</p>
+
+{{#if bandera}}
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Titulo</th>
+            <th scope="col">Precio</th>
+            <th scope="col">Foto</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each productos}}
+        <tr>
+            <td>{{this.titulo}}</td>
+            <td>{{this.precio}}</td>
+            <td><img src="{{this.miniatura}}" class="img-fluid" style="max-height: 50px;"> </td>
+        </tr>
+        {{/each}}
+
+    </tbody>
+</table>
+{{else}}
+<div class="alert alert-info" role="alert">
+  No existen productos cargados
+</div>
+{{/if}}
